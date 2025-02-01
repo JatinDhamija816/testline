@@ -6,10 +6,9 @@ export default defineConfig({
   plugins: [react(), tailwindcss()],
   server: {
     proxy: {
-      "/api/quiz": {
-        target: "https://api.jsonserve.com/Uw5CrX",
+      "/api": {
+        target: "https://testline-rouge.vercel.app", // Vercel will replace this in production
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api\/quiz/, ""),
       },
     },
   },
